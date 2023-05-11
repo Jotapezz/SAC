@@ -21,8 +21,9 @@ exports.getUser = async (req, res) => {
 
 exports.addUser = async (req, res) => {
   try {
-    const { id_estado, id_rol, correo, contrasena } = req.body;
+    const { id_rol, correo, contrasena } = req.body;
 
+    // Verifica si el correo ya existe en la tabla de usuario
     const query = 'SELECT COUNT(*) AS count FROM sac.usuario WHERE correo = $1';
     const { rows } = await pool.query(query, [correo]);
     const count = rows[0].count;
@@ -33,8 +34,13 @@ exports.addUser = async (req, res) => {
       });
     }
 
-    const insertQuery = 'INSERT INTO sac.usuario (id_estado, id_rol, correo, contrasena, created_at) VALUES ($1, $2, $3,$4,  NOW())';
-    await pool.query(insertQuery, [id_estado, id_rol, correo, contrasena]);
+    // Encriptación de la password
+    const hashedPassword = await bcrypt.hash(contrasena, 10);
+
+    //establece siempre id_estado en 1, es decir, como activo
+    //la fecha se establece siempre como la fecha actual
+    const insertQuery = 'INSERT INTO sac.usuario (id_estado, id_rol, correo, contrasena, created_at) VALUES (1, $1, $2, $3, NOW())';
+    await pool.query(insertQuery, [id_rol, correo, hashedPassword]);
 
     return res.status(200).send({
       success: true,
