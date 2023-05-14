@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Ingreso de usuarios</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">Sac</a></h1>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Generic</a></li>
+					<li><a href="elements.html">Elements</a></li>
+					<li><a href="login.html">Log In</a></li>
+					<li><a href="#">Sign Up</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Content -->
+		<section id="wrapper">
+			<!-- <header>
+				<div class="inner">
+			
+					<h2>Sistema Administrativo Complementario</h2>
+					<p>No es sólo otra herramienta, es tu solución</p>
+				</div>
+			</header> -->
+			<div class="wrapper altspotlight style6">
+				<div class="inner">
+						<h3 class="major">Ingreso de usuarios</h3>
+						<p>Llena el siguiente formulario para ingresar un usuario </p>
+						<form id="add-user-form">
+							<label for="id_rol">Tipo de usuario:</label>
+							<select id="id_rol" name="id_rol">
+							  <option value="1">Administrador</option>
+							  <option value="2">Usuario</option>
+							  <option value="3">Básico</option>
+							</select><br>
+						
+							<label for="correo">Correo:</label>
+							<input type="email" id="correo" name="correo" required><br>
+						
+							<label for="contrasena">Contraseña:</label>
+							<input type="password" id="contrasena" name="contrasena" required><br>
+						
+							<input type="submit" value="Agregar Usuario">
+						  </form>
+						  <script src="assets\js\addUser.js"></script>
+
+              
+						<div id="message"></div>
+
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
