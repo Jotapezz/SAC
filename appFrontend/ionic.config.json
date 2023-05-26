@@ -1,8 +1,7 @@
 {
-  "name": "SacApp",
+  "name": "app-api",
   "integrations": {
-    "capacitor": {},
-    "cordova": {}
+    "capacitor": {}
   },
   "type": "angular"
 }
